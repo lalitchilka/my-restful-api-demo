@@ -21,4 +21,15 @@ public class UserServiceImpl implements UserService{
         userRepository.findAll().forEach(users::add);
         return users;
     }
+
+    @Override
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElse(new User("Dummy", "User"));
+    }
+
+    @Override
+    public User saveUser(User user) {
+        userRepository.save(user);
+        return user;
+    }
 }

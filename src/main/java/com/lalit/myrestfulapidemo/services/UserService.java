@@ -6,4 +6,6 @@ import java.util.Set;
 
 public interface UserService {
     Set<User> getAllUsers();
+    User getUserById(Long id);
+    User saveUser(User user);
 }
